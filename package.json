@@ -1,0 +1,20 @@
+{
+  "name": "martabx",
+  "version": "0.0.1",
+  "description": "Knex SuperModel!",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "jest __tests__ --forceExit"
+  },
+  "author": "Afief Yona Ramadhana",
+  "license": "cc by sa 4.0",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "knex": "^0.14.0",
+    "sqlite3": "^3.1.13"
+  },
+  "jest": {
+    "testRegex": "/__tests__/.*\\.spec\\.js$"
+  }
+}
