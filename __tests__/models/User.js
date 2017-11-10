@@ -3,7 +3,12 @@ const MartabX = require('../../lib/index.js')(knex)
 
 const User = MartabX.model('User', {
   table: 'users',
-  editable: ['name']
+  schema: {
+    name: {
+      type: 'string',
+      required: true
+    }
+  }
 })
 
 module.exports = User

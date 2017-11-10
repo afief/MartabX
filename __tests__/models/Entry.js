@@ -3,7 +3,16 @@ const MartabX = require('../../lib/index.js')(knex)
 
 const Entry = MartabX.model('Entry', {
   table: 'entries',
-  editable: ['user_id', 'title']
+  schema: {
+    user_id: {
+      type: 'number',
+      required: true
+    },
+    title: {
+      type: 'string',
+      required: true
+    }
+  }
 })
 
 module.exports = Entry
