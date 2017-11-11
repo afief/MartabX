@@ -14,6 +14,7 @@ describe('Basic CRUD', () => {
 
     expect(!isNaN(user.id)).toBe(true)
     expect(user.name).toBe(name)
+    expect(user.created_at).toBeTruthy()
 
     currentUser = user
   })
