@@ -20,4 +20,31 @@ const User = MartabX.model('User', {
   }
 })
 ```
+
+##### SIMPLE CASE
+Create
+```
+const user = await User.create({
+  name: 'Sherina Munaf'
+})
+```
+
+Get By Id
+```
+const user = await User.find(1)
+```
+
+Update
+```
+const user = await User.find(1)
+user.name = 'Pramaisshela Arinda Daryono Putri'
+user.update()
+```
+
+Delete
+```
+const user = await User.find(1)
+user.delete()
+```
+
 Using [hannibal](https://www.npmjs.com/package/hannibal) for schema
