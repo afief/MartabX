@@ -22,9 +22,8 @@ describe('Basic CRUD', () => {
   it('Read : Success', async () => {
     const user = await User.find(currentUser.id)
 
-    console.log(user)
-
     expect(!isNaN(user.id)).toBe(true)
+    expect(user.name).toBe(currentUser.name)
   })
 
   it('Update : Success', async () => {
@@ -37,5 +36,22 @@ describe('Basic CRUD', () => {
 
     expect(result).toBe(true)
     expect(user.name).toBe(newName)
+
+    currentUser = user
   })
+
+  it('Delete : Success', async () => {
+    const currentName = currentUser.name
+    const newName = faker.name.findName()
+
+    const user = await User.find(currentUser.id)
+    user.name = newName
+    const result = await user.delete()
+
+    expect(result).toBe(true)
+
+    const oldUser = await User.find(currentUser.id)
+    expect(oldUser).toBe(null)
+  })
+
 })
