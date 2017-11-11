@@ -26,4 +26,16 @@ describe('Basic CRUD', () => {
 
     expect(!isNaN(user.id)).toBe(true)
   })
+
+  it('Update : Success', async () => {
+    const currentName = currentUser.name
+    const newName = faker.name.findName()
+
+    const user = await User.find(currentUser.id)
+    user.name = newName
+    const result = await user.update()
+
+    expect(result).toBe(true)
+    expect(user.name).toBe(newName)
+  })
 })
