@@ -12,6 +12,7 @@
     "hannibal": "^0.5.0"
   },
   "devDependencies": {
+    "faker": "^4.1.0",
     "jest": "^21.2.1",
     "knex": "^0.14.0",
     "sqlite3": "^3.1.13"

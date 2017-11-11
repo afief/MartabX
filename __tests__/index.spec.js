@@ -1,14 +1,28 @@
-/* global describe it */
+/* global describe it expect */
 const User = require('./models/User')
 const Entry = require('./models/Entry')
+const faker = require('faker')
 
-describe('Test', () => {
-  it('Success', async () => {
-    
-    const rowId = await User.create({
-      name: (+new Date()).toString()
+describe('Basic CRUD', () => {
+  let currentUser = null
+
+  it('Create : Success', async () => {
+    const name = faker.name.findName()
+    const user = await User.create({
+      name
     })
-    console.log('row id', rowId)
-    
+
+    expect(!isNaN(user.id)).toBe(true)
+    expect(user.name).toBe(name)
+
+    currentUser = user
+  })
+
+  it('Read : Success', async () => {
+    const user = await User.find(currentUser.id)
+
+    console.log(user)
+
+    expect(!isNaN(user.id)).toBe(true)
   })
 })
