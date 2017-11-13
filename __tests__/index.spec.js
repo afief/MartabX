@@ -65,10 +65,13 @@ describe('Basic CRUD', () => {
     })
 
     it('Failed to create row due to invalid column', async () => {
-      const user = await User.create({
-        nama: faker.name.findName(),
-      })
-      expect(user).toBe(null)
+      try {
+        const user = await User.create({
+          nama: faker.name.findName(),
+        })
+      } catch (e) {
+        expect(e.message).toBeTruthy()
+      }
     })
 
     it('Failed to get row due to id not found', async() => {
