@@ -1,6 +1,6 @@
 {
   "name": "martabx",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Knex Super Model",
   "main": "./lib/index.js",
   "scripts": {
