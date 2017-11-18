@@ -47,4 +47,14 @@ const user = await User.find(1)
 user.delete()
 ```
 
+##### Extends Class
+```
+class UserChild extends User {
+  async hardDelete () {
+    const res = await context().query().where('id', this.id).delete()
+    return res
+  }
+}
+```
+
 Using [hannibal](https://www.npmjs.com/package/hannibal) for schema
