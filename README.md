@@ -49,6 +49,11 @@ user.name = 'Pramaisshela Arinda Daryono Putri'
 user.update()
 ```
 
+Get Count
+```
+const totalPublished = await User.count({published: 1})
+```
+
 Delete
 ```
 const user = await User.find(1)
