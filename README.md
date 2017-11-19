@@ -33,6 +33,14 @@ Get By Id
 ```
 const user = await User.find(1)
 ```
+or by another column
+```
+const user = await User.find({name: 'Gista Putri'})
+```
+or get motiple results
+```
+const user = await User.finds({published: 1})
+```
 
 Update
 ```
