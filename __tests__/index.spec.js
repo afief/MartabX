@@ -84,19 +84,14 @@ describe('Basic CRUD', () => {
       expect(user).toBe(null)
     })
 
-    it('Failed to update row due to invalid parameter', async() => {
+    it('Allow invalid parameter', async() => {
       const user = await User.create({
         name: faker.name.findName()
       })
       user.address = faker.address.streetName()
 
-      let result = null
-      try {
-        result = await user.update()
-      } catch (e) {
-        expect(e.code).toBe('SQLITE_ERROR')
-      }
-      expect(result).toBe(null)
+      let result = await user.update()
+      expect(result).toBeTruthy()
     })
 
     it('Failed to delete row due to id not found', async() => {

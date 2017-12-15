@@ -7,6 +7,9 @@ const User = MartabX.model('User', {
     name: {
       type: 'string',
       required: true
+    },
+    updated_at: {
+      type: 'date'
     }
   }
 })
