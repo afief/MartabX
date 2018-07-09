@@ -33,7 +33,7 @@ describe('Basic CRUD', () => {
       user.name = newName
       const result = await user.update()
 
-      expect(result).toBe(true)
+      expect(result).toBeTruthy()
       expect(user.name).toBe(newName)
 
       currentUser = user
