@@ -1,10 +1,8 @@
 /* global describe it expect */
 const User = require('./models/User')
-const Entry = require('./models/Entry')
 const faker = require('faker')
 
 describe('Basic CRUD', () => {
-
   describe('Success Story', () => {
     let currentUser = null
 
@@ -29,7 +27,6 @@ describe('Basic CRUD', () => {
     })
 
     it('Update : Success', async () => {
-      const currentName = currentUser.name
       const newName = faker.name.findName()
 
       const user = await User.find(currentUser.id)
@@ -43,7 +40,6 @@ describe('Basic CRUD', () => {
     })
 
     it('Delete : Success', async () => {
-      const currentName = currentUser.name
       const newName = faker.name.findName()
 
       const user = await User.find(currentUser.id)
@@ -58,7 +54,6 @@ describe('Basic CRUD', () => {
   })
 
   describe('Failed Story', () => {
-
     it('Failed to create row due to empty column', async () => {
       const user2 = await User.create()
       expect(user2).toBe(null)
@@ -66,8 +61,8 @@ describe('Basic CRUD', () => {
 
     it('Failed to create row due to invalid column', async () => {
       try {
-        const user = await User.create({
-          nama: faker.name.findName(),
+        await User.create({
+          nama: faker.name.findName()
         })
       } catch (e) {
         expect(e.message).toBeTruthy()
@@ -98,7 +93,5 @@ describe('Basic CRUD', () => {
       const result = await User.delete(faker.random.number(10000, 20000))
       expect(result).toBe(false)
     })
-
   })
-
 })

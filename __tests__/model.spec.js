@@ -1,6 +1,5 @@
 /* global describe it expect */
 const User = require('./models/User')
-const Entry = require('./models/Entry')
 const faker = require('faker')
 
 describe('Save modified model', () => {
