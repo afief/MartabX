@@ -93,5 +93,19 @@ describe('Basic CRUD', () => {
       const result = await User.delete(faker.random.number(10000, 20000))
       expect(result).toBe(false)
     })
+
+    it('Get deleted on find', async () => {
+      const name = faker.name.findName()
+      const user = await User.create({
+        name
+      })
+      await user.delete()
+
+      const getActive = await User.find(user.id)
+      expect(getActive).toBeFalsy()
+
+      const getDeleted = await User.find(user.id, true)
+      expect(getDeleted).toBeTruthy()
+    })
   })
 })
