@@ -2,3 +2,4 @@
 
 node_modules
 __tests__/test.sqlite
+package-lock.json
