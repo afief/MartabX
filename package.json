@@ -12,10 +12,11 @@
     "hannibal": "^0.5.0"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
     "faker": "^4.1.0",
     "jest": "^21.2.1",
-    "knex": "^0.14.0",
-    "sqlite3": "^3.1.13"
+    "knex": "^0.16.3",
+    "sqlite3": "^4.0.4"
   },
   "jest": {
     "testRegex": "/__tests__/.*\\.spec\\.js$"
