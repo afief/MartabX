@@ -1,6 +1,6 @@
 {
   "name": "martabx",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Knex Super Model",
   "main": "./build/index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "faker": "^4.1.0",
+    "fast-async": "^6.3.8",
     "jest": "^21.2.1",
     "knex": "^0.16.3",
     "sqlite3": "^4.0.4"
