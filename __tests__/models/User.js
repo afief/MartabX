@@ -1,5 +1,5 @@
 const knex = require('../DB.js')
-const MartabX = require('../../lib/index.js')(knex)
+const MartabX = require('../../build/index.js')(knex)
 
 const User = MartabX.model('User', {
   table: 'users',

@@ -2,8 +2,9 @@
   "name": "martabx",
   "version": "0.1.2",
   "description": "Knex Super Model",
-  "main": "./lib/index.js",
+  "main": "./build/index.js",
   "scripts": {
+    "build": "babel lib -d build",
     "test": "jest __tests__ --forceExit"
   },
   "author": "Afief Yona Ramadhana",
@@ -12,6 +13,7 @@
     "hannibal": "^0.5.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "faker": "^4.1.0",
     "jest": "^21.2.1",
